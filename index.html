@@ -13,28 +13,12 @@
     <div id="content"></div>
     <script type="text/jsx">
       // tutorial1.js
-      var CommentBox = React.createClass({
-        render: function() {
-          return (
-            <div className="commentBox">
-              <h1>Comments</h1>
-              <CommentList />
-              <CommentForm />
-            </div>
-          );
-        }
-      });
-      React.render(
-        <CommentBox />,
-        document.getElementById('content')
-      );
-
       var CommentList = React.createClass({
         render: function() {
           return (
             <div className="commentList">
               <Comment author="Russ Silva">This is one comment</Comment>
-              <Comment author="Skrillex">This is *another* comment</Comment>
+              <Comment author="Jasmine the Cat">This is *another* comment</Comment>
             </div>
           );
         }
@@ -58,10 +42,26 @@
                 {this.props.author}
               </h2>
               {this.props.children}
-            </div
+            </div>
           );
         }
       });
+
+      var CommentBox = React.createClass({
+        render: function() {
+          return (
+            <div className="commentBox">
+              <h1>Comments</h1>
+              <CommentList />
+              <CommentForm />
+            </div>
+          );
+        }
+      });
+      React.render(
+        <CommentBox />,
+        document.getElementById('content')
+      );
     </script>
   </body>
 </html>
